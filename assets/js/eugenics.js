@@ -1,10 +1,10 @@
 (function($) {
-  $.fn.timeline = function() {
+  $.fn.eugenics = function() {
     var selectors = {
       id: $(this),
-      item: $(this).find(".timeline-item"),
-      activeClass: "timeline-item--active",
-      img: ".timeline__img"
+      item: $(this).find(".eugenics-item"),
+      activeClass: "eugenics-item--active",
+      img: ".eugenics__img"
     };
     selectors.item.eq(0).addClass(selectors.activeClass);
     selectors.id.css(
@@ -21,7 +21,7 @@
       var max, min;
       var pos = $(this).scrollTop();
       selectors.item.each(function(i) {
-        min = $(this).offset().top;
+        min = $(this).offset().top - 100;
         max = $(this).height() + $(this).offset().top;
         var that = $(this);
         if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
@@ -53,4 +53,4 @@
   };
 })(jQuery);
 
-$("#timeline-1").timeline();
+$("#eugenics-1").eugenics();
